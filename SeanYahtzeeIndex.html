@@ -4,205 +4,222 @@
 	<title>Yahtzee</title>
 	<!--<script src="bootstrap.min.js"></script>-->
 	<script src="jquery-1.10.2.min.js"></script>
+	<script src="SeanYahtzee.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 	<link href="SeanYahtzee.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+	<div id="header">
+		<h1>Yahtzee</h1>
+	</div> <!-- end of header div -->
+
+	<!-- <table class="tableContainer"> -->
+	<div class="wrapper">
+		<div class="left">
+			<table class="outerBorder"> <!--border="1"> -->
+				<table class="scorecard">
+					<tr class="columns">
+						<th>UPPER SECTION</th>
+						<th>HOW TO SCORE</th>
+						<th>Human</th>
+						<th>Computer</th>
+					</tr><!-- end of column class -->
+
+					<tr>
+						<td>Aces = 1</td>
+						<td>Count and Add<br>Only Aces</td>
+						<td></td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td>Twos = 2</td>
+						<td>Count and Add<br>Only Twos</td>
+						<td></td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td>Threes = 3</td>
+						<td>Count and Add<br>Only Threes</td>
+						<td></td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td>Fours = 4</td>
+						<td>Count and Add<br>Only Fours</td>
+						<td></td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td>Fives = 5</td>
+						<td>Count and Add<br>Only Fives</td>
+						<td></td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td>Sixes = 6</td>
+						<td>Count and Add<br>Only Sixes</td>
+						<td></td>
+						<td></td>
+					</tr>
 
 
-	<div id="container">
+					<tr>
+						<td>TOTAL SCORE</td>
 
-		<div id="header">
-			<h1>Yahtzee</h1>
-		</div> <!-- end of header div -->
-
-		<table class="tableContainer">
-			<tr class="mainRow">
-				<td class="left">
-					<table class="outerBorder"> <!--border="1"> -->
-						<table class="scorecard">
-							<tr class="header">
-								<th>UPPER SECTION</th>
-								<th>HOW TO SCORE</th>
-								<th>Human</th>
-								<th>Computer</th>
-							</tr><!-- end of header class -->
-
-							<tr>
-								<td>Aces = 1</td>
-								<td>Count and Add<br>Only Aces</td>
-								<td></td>
-								<td></td>
-							</tr>
-
-							<tr>
-								<td>Twos = 2</td>
-								<td>Count and Add<br>Only Twos</td>
-								<td></td>
-								<td></td>
-							</tr>
-
-							<tr>
-								<td>Threes = 3</td>
-								<td>Count and Add<br>Only Threes</td>
-								<td></td>
-								<td></td>
-							</tr>
-
-							<tr>
-								<td>Fours = 4</td>
-								<td>Count and Add<br>Only Fours</td>
-								<td></td>
-								<td></td>
-							</tr>
-
-							<tr>
-								<td>Fives = 5</td>
-								<td>Count and Add<br>Only Fives</td>
-								<td></td>
-								<td></td>
-							</tr>
-
-							<tr>
-								<td>Sixes = 6</td>
-								<td>Count and Add<br>Only Sixes</td>
-								<td></td>
-								<td></td>
-							</tr>
+						<td> &#8594</td>
+						<td></td>
+						<td></td>
+					</tr>
 
 
-							<tr>
-								<td>TOTAL SCORE</td>
-								
-								<td> &#8594</td>
-								<td></td>
-								<td></td>
-							</tr>
+					<tr>
+						<td>BONUS<div>If total score<br>is 63 or over</div></td>
+						<td>SCORE 35</td>
+						<td></td>
+						<td></td>
+					</tr>
 
 
-							<tr>
-								<td>BONUS<div>If total score<br>is 63 or over</div></td>
-								<td>SCORE 35</td>
-								<td></td>
-								<td></td>
-							</tr>
+					<tr>
+						<td>TOTAL<div>Of Upper<br>Section</div></td>
+						<td> &#8594</td>
+						<td></td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td colspan="4">
+							LOWER SECTION
+						</td>
+
+					</tr>
 
 
-							<tr>
-								<td>TOTAL<div>Of Upper<br>Section</div></td>
-								<td> &#8594</td>
-								<td></td>
-								<td></td>
-							</tr>
+					<tr>
+						<td>3 of a kind</td>
+						<td>Add Total<br>Of All Dice</td>
+						<td></td>
+						<td></td>
+					</tr>
 
-							<tr>
-								<td colspan="4">
-									LOWER SECTION
-								</td>
+					<tr>
+						<td>4 of a kind</td>
+						<td>Add Total<br>Of All Dice</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Full House</td>
+						<td>SCORE 25</td>
+						<td></td>
+						<td></td>
+					</tr>
 
-							</tr>
+					<tr>
+						<td>Small Straight<br>Sequence of 4</td>
+						<td>SCORE 30</td>
+						<td></td>
+						<td></td>
+					</tr>
 
+					<tr>
+						<td>Large Straight<br>Sequence of 5</td>
+						<td>SCORE 40</td>
+						<td></td>
+						<td></td>
+					</tr>
 
-							<tr>
-								<td>3 of a kind</td>
-								<td>Add Total<br>Of All Dice</td>
-								<td></td>
-								<td></td>
-							</tr>
+					<tr>
+						<td>YAHTZEE<br>5 of a kind</td>
+						<td>SCORE 50</td>
+						<td></td><td></td>
+					</tr>
 
-							<tr>
-								<td>4 of a kind</td>
-								<td>Add Total<br>Of All Dice</td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>Full House</td>
-								<td>SCORE 25</td>
-								<td></td>
-								<td></td>
-							</tr>
+					<tr>
+						<td>Chance</td>
+						<td>Score Total<br>of All 5 Dice</td>
+						<td></td>
+						<td></td>
+					</tr>
 
-							<tr>
-								<td>Small Straight<br>Sequence of 4</td>
-								<td>SCORE 30</td>
-								<td></td>
-								<td></td>
-							</tr>
+					<tr>
+						<td rowspan="2">YAHTZEE<br>BONUS</td>
+						<td> &#x2713 FOR<br>EACH BONUS </td>
+						<td></td>
+						<td></td>
+					</tr>
 
-							<tr>
-								<td>Large Straight<br>Sequence of 5</td>
-								<td>SCORE 40</td>
-								<td></td>
-								<td></td>
-							</tr>
+					<tr>
+						<!-- empty slot because of 2-row cell -->
+						<td>SCORE 100<br>PER &#x2713</td>
+						<td></td><td></td>
+					</tr>
 
-							<tr>
-								<td>YAHTZEE<br>5 of a kind</td>
-								<td>SCORE 50</td>
-								<td></td><td></td>
-							</tr>
+					<tr>
+						<td>TOTAL<br>Of Lower Section</td>
+						<td> &#8594 </td>
+						<td></td><td></td>
+					</tr>
 
-							<tr>
-								<td>Chance</td>
-								<td>Score Total<br>of All 5 Dice</td>
-								<td></td>
-								<td></td>
-							</tr>
+					<tr>
+						<td>TOTAL<br>Of Upper Section</td>
+						<td> &#8594 </td>
+						<td></td><td></td>
+					</tr>
 
-							<tr>
-								<td rowspan="2">YAHTZEE<br>BONUS</td>
-								<td> &#x2713 FOR<br>EACH BONUS </td>
-								<td></td>
-								<td></td>
-							</tr>
-
-							<tr>
-								<!-- empty slot because of 2-row cell -->
-								<td>SCORE 100<br>PER &#x2713</td>
-								<td></td><td></td>
-							</tr>
-
-							<tr>
-								<td>TOTAL<br>Of Lower Section</td>
-								<td> &#8594 </td>
-								<td></td><td></td>
-							</tr>
-
-
-							<tr>
-								<td>TOTAL<br>Of Upper Section</td>
-								<td> &#8594 </td>
-								<td></td><td></td>
-							</tr>
-
-							<tr>
-								<td>GRAND TOTAL</td>
-								<td> &#8594 </td>
-								<td></td><td></td>
-							</tr>
+					<tr>
+						<td>GRAND TOTAL</td>
+						<td> &#8594 </td>
+						<td></td><td></td>
+					</tr>
 
 
 
-						</table> <!-- end scorecard -->
-					</table> <!-- end outerBorder-->
-				</td> <!-- end td left -->
+				</table> <!-- end scorecard -->
+			</table> <!-- end outerBorder-->
+		</div> <!-- end div left -->
 
-				<td class="right">
+		<div class="right" style="">
 
-					<div class="gameplay">
-						Game play goes on in here
-					</div>
+			<div class="gameplay">
+				<div class="center">
+					<p><button class="roll">This is how I roll.</button></p>
+					<p>
+						<button class = "die1" id="die1">?</button>
+						<button class = "die2" id="die2">?</button>
+						<button class = "die3" id="die3">?</button>
+						<button class = "die4" id="die4">?</button>
+						<button class = "die5" id="die5">?</button>
+					</p>
+					<p class='diceTotal' id = 'diceTotal'></p>
+				
+					Game stuff here.
 
-				</td> <!-- end of right table -->	
-				<!-- </table> <!-- end of outer table --> 
-						<!--
-						<p>
-						Arrow icons from <a href="http://www.Glyphicons.com">Glyphicons.com</a>
-					</p> -->
-				</tr> <!-- close mainRow -->	
-			</table> <!-- end tableContainer -->
-		</div> <!-- end of container -->
-	<!-- <td><span class="glyphicon glyphicon-arrow-right"></span></td> -->
-	</body>
-	</html>
+					<div class="wrapper">
+						<div class="left-nobox">
+							<input type="button" id="score" name="score" value="Score?" />
+						</div> <!-- close left -->
+						<div class="right">
+							<input type="button" id="rollAgain" name="rollAgain" value="Roll Again?" />
+						</div><!-- close right -->
+					</div> <!-- end of wrapper --> 
+					
+
+				</div> <!-- end center -->
+			
+
+
+			</div>
+
+		</div> <!-- end of right div -->	
+
+		<div class="clear">
+		</div>
+	</div> <!-- close wrapper -->	
+</body>
+</html>

@@ -1,0 +1,77 @@
+<<html>
+<head>
+	<title></title>
+
+	<script language="JavaScript">
+ 
+var die = 6;
+var dice = 3;
+function dice_roll(die, dice) {
+var roll = 0;
+for (loop=0; loop < dice; loop++) {
+ 
+roll = roll + Math.round(Math.random() * die) % die + 1;
+}
+document.form.text.value = roll;
+}
+ 
+</script> 
+</head>
+<body>
+
+<body>
+<center>
+<form name="form">
+<table border="2" cellpadding="5">
+<tr>
+<td colspan="2" align="center">What dice type?</td>
+<td colspan="2" align="center">How many dice to roll?</td>
+</tr>
+<tr>
+<td valign="top" align="center">
+<p><input type="radio" name="sides" onclick="die = 3">3 Sided
+<p><input type="radio" name="sides" onclick="die = 4">4 Sided
+<p><input type="radio" name="sides" onclick="die = 5">5 Sided
+<p><input type="radio" checked name="sides" onclick="die = 6">6 Sided
+<p><input type="radio" name="sides" onclick="die = 8">8 Sided</p>
+</td>
+<td valign="top" align="center">
+<p><input type="radio" name="sides" onclick="die = 10">   10 Sided
+<p><input type="radio" name="sides" onclick="die = 12">12 Sided
+<p><input type="radio" name="sides" onclick="die = 20">20 Sided
+<p><input type="radio" name="sides" onclick="die = 30">30 Sided
+<p><input type="radio" name="sides" onclick="die = 100">100 Sided</p>
+</td>
+<td valign="top" align="center">
+<p><input type="radio" name="number" onclick="dice = 1">1
+<p><input type="radio" name="number" onclick="dice = 2">2
+<p><input type="radio" checked name="number" onclick="dice = 3">3
+<p><input type="radio" name="number" onclick="dice = 4">4
+<p><input type="radio" name="number" onclick="dice = 5">5</p>
+</td>
+<td valign="top" align="center">
+<p><input type="radio" name="number" onclick="dice = 6">6
+<p><input type="radio" name="number" onclick="dice = 7">7
+<p><input type="radio" name="number" onclick="dice = 8">8
+<p><input type="radio" name="number" onclick="dice = 9">9
+<p><input type="radio" name="number" onclick="dice = 10">10</p>
+</td>
+</tr>
+<tr>
+<td align="center" colspan="4">
+<input type="button" value="Roll Dice" name="button" onclick="dice_roll(die, dice)">
+<input type="text" size="10" name="text">
+</td>
+</tr>
+</table>
+</form>
+</center>
+<p><center>
+<font face="arial, helvetica" size="-2">Dont forget to visit devasp<br>
+<a href="http://www.devasp.com">www.devasp.com</a></font>
+</center>
+</body> 
+
+
+</body>
+</html>
