@@ -29,14 +29,30 @@ $(document).ready(function(){
   currentDice[4]=randomdice5;
 
  })
-/*
- $("button.rollAgain").click(function() {
- 
-  })
-*/
 
 
 });
+
+function score()
+ {
+  for(var i=0; i<currentDice.length; i++) {
+   diceTotal += currentDice[i];
+   console.log(diceTotal);
+   // alert("Your total is " + diceTotal); 
+   alert("score!");
+ }
+} 
+
+
+function rollAgain()
+{
+  alert("Roll again!");
+}
+
+
+
+
+
 
 /*
 var isClicked = false;

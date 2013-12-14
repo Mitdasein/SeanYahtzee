@@ -5,7 +5,7 @@
 	<!--<script src="bootstrap.min.js"></script>-->
 	<script src="jquery-1.10.2.min.js"></script>
 	<script src="SeanYahtzee.js"></script>
-	<script src="SeanYahtzeeScoring.js"></script>
+	<!-- <script src="SeanYahtzeeScoring.js"></script> -->
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 	<link href="SeanYahtzee.css" rel="stylesheet" type="text/css">
 </head>
@@ -198,8 +198,24 @@
 						<button class = "die5" id="die5">?</button>
 					</p>
 					<p class='diceTotal' id = 'diceTotal'></p>
-				
-					Game stuff here.
+					
+<script>
+  for(var i=0; i<currentDice.length; i++) {
+   diceTotal += currentDice[i];
+   console.log(diceTotal);
+   alert("Your total is " + diceTotal); 
+var firstname;
+firstname="Hege";
+document.write(firstname);
+document.write("<br>");
+firstname="Tove";
+document.write(firstname);
+</script>
+		
+					<p>
+					Click the dice you want to keep.
+					</p>
+					<p></p>
 
 					<div class="wrapper">
 						<div class="left-nobox">
@@ -214,10 +230,7 @@
 					
 
 				</div> <!-- end center -->
-			
-
-
-			</div>
+			</div><!-- end gameplay -->
 
 		</div> <!-- end of right div -->	
 
