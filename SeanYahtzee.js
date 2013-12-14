@@ -27,23 +27,22 @@ $(document).ready(function(){
   currentDice[2]=randomdice3;
   currentDice[3]=randomdice4;
   currentDice[4]=randomdice5;
+
  })
-
-
 /*
-  $("button.score").click(function() {
-   for(var i=0; i<currentDice.length; i++) {
-   diceTotal += currentDice[i];
-   console.log(diceTotal);
-  }
- }
-})
-  */
-
-
-
  $("button.rollAgain").click(function() {
-    
+ 
   })
+*/
+
 
 });
+
+/*
+var isClicked = false;
+function highlight(score) {
+    isClicked = !isClicked;
+    var element = document.getElementById(score);
+    element.style.background = (isClicked  == true) ? "rgba(255,0,0,0.6)" : "rgba(255,0,0,0.8)";
+}
+*/

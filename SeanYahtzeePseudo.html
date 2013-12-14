@@ -1,0 +1,116 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+Testing Pastebin per @frkbmb's suggestion.
+ 
+Trying to write a #Yahtzee game in #JavaScript. Does this pseudocode look appropriate? I don't understand Yahtzee (or almost any other game). I want to make sure I have all the logic right before I start coding.
+ 
+Yahtzee
+2 players
+ 
+Player1 = human
+Player 2 = computer
+ 
+Text input = "Type your name"
+Player1.name = textbox input
+ 
+Set values of all CategoryBox variables = "null"
+ 
+
+ 
+Player chooses to score or roll again
+       
+If (player chooses to roll again) {
+        Player chooses 0-5 dice as "keepers"
+                If Player clicks on a die, remove d.x from array DiceRolled
+        Player clicks "roll"
+                generate random value 1-6 for each die remaining in array
+        }
+ 
+If (player chooses to score) {
+        Upper Section: Mark numbers in appropriate score boxes
+                (more game logic that I don't understand yet)
+        Lower Section:
+                Scan over collection to see if certain combinations of values exist
+                Re-arrange array by numerical order value
+                        If three dice have same value, "3 of a kind"
+                                set "ThreeOfAKind" = Total values of all five dice
+                        If four dice have same value, "4 of a kind"
+                                set "FourOfAKind = Total values of all five dice
+                        If three dice have one value and two dice have another value,
+                                set "FullHouse" = 25
+                        If dice show any sequence of four numbers
+                                If dice[i]-[i+3] = value, value+1, value+2, value+3
+                                set "Small Straight" = 30
+                        If dice show sequence of five numbers
+                                If dice[i]+[1+4]= value, value+1, value+2, value+3,
+                                         value+4,
+                                or
+                                        if array Dice = [1, 2, 3,4,5]
+                                        or
+                                        if array Dice = [2,3,4,5,6]    
+                                set "LargeStraight"=40
+                        If (die1===die2 && die2===die3 && die3===die4 &
+                        die4===die5 && die5===die6)
+                                Set "Yahtzee" = 50
+                                       
+        Yahtzee bonus:
+                If there is already a Yahtzee, in a previous turn
+                        add 100 point Yahtzee bonus
+                        set "YahtzeeBonus" = "checked"
+                        (take bonus chip?)
+                        play Joker Rules
+ 
+        Joker Rules:
+                Determine appropriate UpperSection box
+                        if  box is empty
+                                set it to total of all five dice
+                                        (var i=0; i<arr.length; i++)
+                        if box is filled
+                                score in any open LowerSection box
+                                        ThreeOfAKind = total of 5 dice
+                                        FourOfAKind = total of 5 dice
+                                        FullHouse = 25
+                                        SmallStraight = 30
+                                        LargeStraight = 40
+                                        Chance: total of all five dice
+                                                (var i=0; i<arr.length; i++)
+       
+                If one UpperSection box != null && no LowerSection box = null
+                        each UpperSection box = 0
+ 
+EndGame:
+        If every CategoryBox for Player1 != null && every CategoryBox for Player2 !=null
+                EndGame
+                                       
+        Each Player:
+                UpperSection:
+                Add all UpperSection values
+                        UpperTotalScore = sum of all UpperSection values
+                                if UpperTotalScore >= 63
+                                UpperTotal = UpperTotalScore + 35
+ 
+                LowerSection:
+                Add all LowerSection values
+                        LowerTotal = sum of all LowerSection values + 100(BonusChip)
+ 
+                GrandTotal:
+                GrandTotal = UpperTotal + LowerTotal
+ 
+Winner = null
+if Player1.GrandTotal > Player2.GrandTotal
+        Winner = Player1
+        display message: "{player1.name}, you are the winner!"
+if Player1.GrandTotal < layer2.GrandTotal
+        Winner = Player2
+        display message: "{player2.name}, you are the winner!"
+if Player1.GrandTotal == layer2.GrandTotal
+        display message: "It's a tie!"
+
+
+</body>
+</html>

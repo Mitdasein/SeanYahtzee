@@ -5,6 +5,7 @@
 	<!--<script src="bootstrap.min.js"></script>-->
 	<script src="jquery-1.10.2.min.js"></script>
 	<script src="SeanYahtzee.js"></script>
+	<script src="SeanYahtzeeScoring.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 	<link href="SeanYahtzee.css" rel="stylesheet" type="text/css">
 </head>
@@ -202,10 +203,12 @@
 
 					<div class="wrapper">
 						<div class="left-nobox">
-							<input type="button" id="score" name="score" value="Score?" />
+							<!-- <input type="button" id="score" name="score" value="Score?" /> -->
+							<button onclick = "score()">Score?</button>
 						</div> <!-- close left -->
 						<div class="right">
-							<input type="button" id="rollAgain" name="rollAgain" value="Roll Again?" />
+							<!-- <input type="button" id="rollAgain" name="rollAgain" value="Roll Again?" /> -->
+							<button onclick = "rollAgain()">Roll Again?</button>
 						</div><!-- close right -->
 					</div> <!-- end of wrapper --> 
 					
