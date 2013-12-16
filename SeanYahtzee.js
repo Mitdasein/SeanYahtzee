@@ -4,14 +4,38 @@ var randomdice3;
 var randomdice4;
 var randomdice5;
 
-var sortedDice = [];
+var currentDice=[];
+var sortedDice=[];
+var diceTotal=0;
 
-var currentDice = [];
-var diceTotal = 0;
+var tries=0;
 
-var tries = 0;
+var aces=0;
+var twos=0;
+var threes=0;
+var fours=0;
+var fives=0;
+var sixes=0;
+var totalScore=0;
+var bonus=0;
+var upperSectionTotal=0;
 
-// var totalScore = 0;
+var threeOfAKind=0;
+var fourOfAKind=0;
+var fullHouse=0;
+var smallStraight=0;
+var largeStraight=0;
+var yahtzee=0;
+var chance=0;
+var yahtzeeBonus=0;
+var yahtzeeBonusScore=0;
+var lowerSectionTotal=0;
+var grandTotal=0;
+
+totalScore=aces + twos + threes + fours + fives + sixes
+upperSectionTotal=totalScore + bonus 
+
+grandTotal=lowerSectionTotal + upperSectionTotal;
 
 /* ready function */
 $(document).ready(function()
@@ -24,11 +48,11 @@ $(document).ready(function()
     } 
     else 
     { 
-      randomdice1 = (Math.round(Math.random()*5)+1);
-      randomdice2 = (Math.round(Math.random()*5)+1);
-      randomdice3 = (Math.round(Math.random()*5)+1);
-      randomdice4 = (Math.round(Math.random()*5)+1);
-      randomdice5 = (Math.round(Math.random()*5)+1);
+      randomdice1=(Math.round(Math.random()*5)+1);
+      randomdice2=(Math.round(Math.random()*5)+1);
+      randomdice3=(Math.round(Math.random()*5)+1);
+      randomdice4=(Math.round(Math.random()*5)+1);
+      randomdice5=(Math.round(Math.random()*5)+1);
       $("button.die1").html(randomdice1);
       $("button.die2").html(randomdice2);
       $("button.die3").html(randomdice3);
@@ -43,87 +67,67 @@ $(document).ready(function()
       currentDice[4]=randomdice5;
 
       for(var i=0; i<currentDice.length; i++) 
-        {
-          diceTotal += currentDice[i];
-        }
+      {
+        diceTotal += currentDice[i];
+      };
       tries=++tries; 
+
+      /*
+      for (var i=0; i<categories.length; i++)
+      { 
+        document.getElementById('categories' + i).write('<categories + i>');
+      };
+      */
     }
   }
-  ) 
-}
-);
+  )
+}); 
 /* end ready */
 
-
+/* start sortCurrentDice */
 function sortCurrentDice()
   {
     if (currentDice.length===0)
       {
         alert("You haven't rolled yet!");
       }
-    else
+      else
       {
         currentDice.sort(function(a,b){return a-b});
         var x=document.getElementById("sortDice");
-        x.innerHTML=currentDice;
-
-        for(var i=0; i<currentDice.length; i++)
+        for(var i=0; i<=4; i++) $('button.sortedDie' + i).html(currentDice[i]);
+        for(var i=0; i<=4; i++)
           {
             sortedDice[i]=currentDice[i];
-            $("button.sortedDie[i]").html(currentDice[i]);
-            console.log(sortedDice[i]);
           }
-            console.log(i);
+          console.log(sortedDice)
+          //x.innerHTML=currentDice;
       }
   };
+/* close sortCurrentDice */
 
-/* start OnGUI 
-function OnGUI()
-  {
-    for (var i=0; i <= sortedDice.length; i++)
-      {
-        $("button.sortedDie[i]").html(currentDice[i]);
-      }
-  }; 
-  // close OnGui */
-
-  /*  start seeTotal  */
+/*  start seeTotal  */
 function seeTotal()
   {
     if (currentDice.length===0)
       {
         alert("You haven't rolled yet!");
       }
-    else
+      else
       {
         alert("Your total is " + diceTotal);
         var y=document.getElementById("writeTotal");
-        y.innerHTML=diceTotal;
+        y.innerHTML=("Your total is " +diceTotal);
       }
   }; 
 // close seeTotal 
 
-/*
-function totalScore() {
-  alert("Not yet implemented!");
-  // alert("Your total is " + diceTotal);
-}
-*/
-
 /* start writeTotal */
 function writeTotal()
-  {
-    document.write("Your total is " + diceTotal);
-  };
+{
+  document.write("Your total is " + diceTotal);
+};
 /* close writeTotal */
-
-/* function seeValue */
-  /*
-    function calculateCategoryValue()
-      {
-
-      }
-      */
 
 /* start seeValue */
 function seeValue()
@@ -132,7 +136,7 @@ function seeValue()
       {
         alert("You haven't rolled yet!");
       }
-    else
+      else
       {
         alert("Not yet implemented!");
       }
@@ -142,11 +146,10 @@ function seeValue()
 function score()
   {  
     console.log(diceTotal);
- alert("Your total is " + diceTotal); 
-  alert("Not yet implemented!");
+    //alert("Your total is " + diceTotal); 
+    alert("Not yet implemented!");
   }; 
-
-  /* end score */
+/* end score */
 
 /* function rollAgain */ 
 function rollAgain()
@@ -160,13 +163,74 @@ function rollAgain()
         alert("Not yet implemented!");
       }
   }; 
-  /* end rollAgain */
+/* end rollAgain */
 
-// start showValue 
-/* function showValue()
-  {
-  };
-  */
+//start showValue 
+/*
+function showValue()
+{
+};
+*?
 // end showValue 
+
+//start calculateUpperSection
+/*
+function calculateUpperSection()
+{
+  for(var i=0; i<=4; i++)
+  {
+    sortedDice[i]=currentDice[i];
+  }
+}
+//close calculateUpperSection
+*/
+
+//start calculateCategoryValue
+function calculateCategoryValue()
+  {
+    if ((sortedDice === [1,2,3,4,5]) || (sortedDice === [2,3,4,5,6]))
+      {
+        var setYahtzee = document.getElementById(yahtzee);
+        setYahtzee.value=50;
+        alert:("YAHTZEE!")
+        var y=document.getElementById("writeValue");
+        y.innerHTML=("YAHTZEE!");
+      }
+      else 
+      {
+        for(var i=0; i<=2; i++)
+          {
+            if ((sortedDice[i] === sortedDice[i+1]) && (sortedDice[i+1] === sortedDice[i+2]) && (sortedDice[i+2])
+              === (sortedDice[i+3]))
+            {
+              fourOfAKind = diceTotal;
+              var setFourOfAKind = document.getElementById(fourOfAKind);
+              setFourOfAKind.value = "diceTotal";
+            }
+        else
+        {
+          for(var i=0; i<=2; i++)
+            {
+              if ((sortedDice[i] === sortedDice[i+1]) && (sortedDice[i+1] === sortedDice[i+2] ))
+              {
+                threeOfAKind = diceTotal;
+                var setThreeOfAKind = document.getElementById(threeOfAKind);
+                setThreeOfAKind.value = "diceTotal";
+              }
+            }
+        }   
+        else
+        {
+          alert:("This category has not yet been implemented.")
+          var y=document.getElementById("writeValue");
+          y.innerHTML=("This category has not yet been implemented."); 
+        }
+      }
+    }
+  };
+
+// close calculateCategoryValue
+
+/* function seeValue */
 
 
