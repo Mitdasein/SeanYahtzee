@@ -71,12 +71,12 @@
 
 					<tr>
 						<td>TOTAL SCORE</td>
-
 						<td> &#8594</td>
-						<td></td>
+						<td>
+							<!-- <script type="text/javascript">document.write(totalScore());</script> -->
+						</td>
 						<td></td>
 					</tr>
-
 
 					<tr>
 						<td>BONUS<div>If total score<br>is 63 or over</div></td>
@@ -197,36 +197,57 @@
 					</p>
 					<p class='diceTotal' id = 'diceTotal'></p>
 					
+					<p id="writeTotal">
+						<button onclick = "seeTotal()">See total of this hand?</button>
+						<!-- <div id = "writeTotal"></div> -->
+					</p>		
+					
+					<p>
+						<button onclick = "seeValue()">See value of this hand?</button>
+					</p>
+					<div id="writeValue()"></div>
+					<!-- <script type="text/javascript">document.write(diceTotal);</script> -->
+					<p id="sortDice">
+						<button onclick="sortCurrentDice()">Sort these dice</button>
 						<p>
-							<button onclick = "seeTotal()">See total of this hand?</button>
-
-						<p>
-							Click the dice you want to keep.
+							
+							<button class = "sortedDie1" id="sortedDie1">!</button>
+							<button class = "sortedDie2" id="sortedDie2">!</button>
+							<button class = "sortedDie3" id="sortedDie3">!</button>
+							<button class = "sortedDie4" id="sortedDie4">!</button>
+							<button class = "sortedDie5" id="sortedDie5">!</button>
+						
 						</p>
-						<p>
-						</p>
-
-						<div class="wrapper">
-							<div class="left-nobox">
-								<!-- <input type="button" id="score" name="score" value="Score?" /> -->
-								<button onclick = "seeTotal()">See total of this hand?</button>
-							</div> <!-- close left -->
-							<div class="right">
-								<!-- <input type="button" id="rollAgain" name="rollAgain" value="Roll Again?" /> -->
-								<button onclick = "rollAgain()">Roll Again?</button>
-							</div><!-- close right -->
-						</div> <!-- end of wrapper --> 
+					</p>
 
 
-					</div> <!-- end center -->
-				</div><!-- end gameplay -->
+					<p>
+						Click the dice you want to keep.
+					</p>
+					<p>
+					</p>
 
-			</div> <!-- end of right div -->	
+					<div class="wrapper">
+						<div class="left-nobox">
+							<!-- <input type="button" id="score" name="score" value="Score?" /> -->
+							<button onclick = "seeTotal()">Score?</button>
+						</div> <!-- close left -->
+						<div class="right">
+							<!-- <input type="button" id="rollAgain" name="rollAgain" value="Roll Again?" /> -->
+							<button onclick = "rollAgain()">Roll Again?</button>
+						</div><!-- close right -->
+					</div> <!-- end of wrapper --> 
+
+
+				</div> <!-- end center -->
+			</div><!-- end gameplay -->
+
+		</div> <!-- end of right div -->	
 
 			<!--
 			<div class="clear">
 			</div>
-			-->
-		</div> <!-- close wrapper -->	
-	</body>
+		-->
+	</div> <!-- close wrapper -->	
+</body>
 </html>
